@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: #0a0f1a;
+  --foreground: #e8edf5;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(10, 15, 26, 0.96);
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: #6b7a99;
+  --accent: #7c8cf8;
+  --accent-soft: rgba(124, 140, 248, 0.1);
+  --accent-border: rgba(124, 140, 248, 0.3);
+}
+
+.light {
+  color-scheme: light;
+  --background: #f5f6f8;
+  --foreground: #0f1623;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: rgba(255, 255, 255, 0.99);
+  --border: rgba(15, 22, 35, 0.1);
+  --muted: #5a6478;
+  --accent: #4f5fe8;
+  --accent-soft: rgba(79, 95, 232, 0.08);
+  --accent-border: rgba(79, 95, 232, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-display), sans-serif;
+}
+
+::selection {
+  background: rgba(124, 140, 248, 0.2);
+}
+
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(15, 22, 35, 0.06), 0 8px 24px rgba(15, 22, 35, 0.06);
+}
+
+.marquee-track {
+  width: max-content;
+}
+
+.wave-letter {
+  display: inline-block;
+  white-space: pre;
+}
+
+.preview-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.light .preview-grid {
+  background-image:
+    linear-gradient(to right, rgba(15, 22, 35, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 22, 35, 0.06) 1px, transparent 1px);
+}
+
+.control-card {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  padding: 0.875rem;
+  min-width: 0;
+}
+
+.light .control-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(15, 22, 35, 0.08);
+}
+
+.btn-inactive {
+  background: transparent;
+}
+
+.btn-inactive:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.light .btn-inactive:hover {
+  background: rgba(15, 22, 35, 0.04);
+}
+
+.btn-active {
+  background: var(--accent-soft);
+  border-color: var(--accent-border) !important;
+}
+
+.range-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.light .range-track {
+  background: rgba(15, 22, 35, 0.1);
+}
+
+.design-swatch {
+  height: 0.5rem;
+  width: 100%;
+  border-radius: 999px;
+}
+
+.design-swatch-default {
+  background: linear-gradient(90deg, rgba(232, 237, 245, 0.9), rgba(107, 122, 153, 0.8));
+}
+
+.light .design-swatch-default {
+  background: linear-gradient(90deg, rgba(90, 100, 120, 0.7), rgba(15, 22, 35, 0.6));
+}
+
+.design-swatch-aurora {
+  background: linear-gradient(90deg, #7dd3fc 0%, #67e8f9 25%, #86efac 55%, #f9a8d4 100%);
+}
+
+.design-swatch-sunset {
+  background: linear-gradient(90deg, #fb7185 0%, #fb923c 35%, #facc15 70%, #f97316 100%);
+}
+
+.design-swatch-neon {
+  background: linear-gradient(90deg, #22d3ee 0%, #38bdf8 45%, #818cf8 100%);
+}
+
+.design-swatch-prism {
+  background: linear-gradient(90deg, #c084fc 0%, #60a5fa 22%, #22d3ee 46%, #34d399 72%, #f472b6 100%);
+}
+
+.text-design-default {
+  color: var(--foreground);
+}
+
+.text-design-aurora {
+  background-image: linear-gradient(135deg, #7dd3fc 0%, #67e8f9 28%, #86efac 55%, #f9a8d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-design-sunset {
+  background-image: linear-gradient(135deg, #fb7185 0%, #fb923c 35%, #facc15 68%, #f97316 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-design-neon {
+  color: #e2f0ff;
+  text-shadow:
+    0 0 12px rgba(124, 140, 248, 0.8),
+    0 0 28px rgba(124, 140, 248, 0.4);
+}
+
+.light .text-design-neon {
+  color: #1a1f3a;
+  text-shadow:
+    0 0 8px rgba(79, 95, 232, 0.2),
+    0 0 20px rgba(79, 95, 232, 0.1);
+}
+
+.text-design-prism {
+  background-image: linear-gradient(120deg, #c084fc 0%, #60a5fa 24%, #22d3ee 48%, #34d399 72%, #f472b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
